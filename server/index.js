@@ -6,7 +6,7 @@ const path = require("path");
 
 const mongoose = require("mongoose");
 
-const db = require(path.join(__dirname, "../public/keys/keys")).MONGO_URI;
+const db = require("../public/keys/keys.js").MONGO_URI;
 
 app.use(express.json());
 
