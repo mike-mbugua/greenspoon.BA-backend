@@ -2,10 +2,12 @@ const express = require("express");
 const app = express();
 
 const jwt = require("jsonwebtoken");
+const path = require("path");
 
 const mongoose = require("mongoose");
 
-const db = require("../public/config/keys").MONGO_URI;
+const db = require(path.join(__dirname, "../public/config/keys")).MONGO_URI;
+
 app.use(express.json());
 
 const dotenv = require("dotenv").config();
