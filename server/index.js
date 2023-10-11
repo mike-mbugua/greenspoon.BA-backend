@@ -3,7 +3,12 @@ const app = express();
 
 const jwt = require("jsonwebtoken");
 const path = require("path");
+const cors = require("cors");
 
+const corsOption = {
+  origin: true,
+  credentials: true,
+};
 const mongoose = require("mongoose");
 
 const MONGO_URI =
@@ -12,6 +17,7 @@ const MONGO_URI =
 const db = MONGO_URI;
 
 app.use(express.json());
+app.use(cors(corsOption));
 
 const dotenv = require("dotenv").config();
 const port = process.env.PORT || 8000;
