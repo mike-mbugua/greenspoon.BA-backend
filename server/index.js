@@ -6,7 +6,10 @@ const path = require("path");
 
 const mongoose = require("mongoose");
 
-const db = require("../public/keys/keys.js").MONGO_URI;
+const MONGO_URI =
+  "mongodb+srv://kamirimichael369:greenspoonba@greenspoon.rkjotcj.mongodb.net/test?retryWrites=true";
+
+const db = MONGO_URI;
 
 app.use(express.json());
 
