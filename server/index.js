@@ -7,6 +7,7 @@ const cors = require("cors");
 
 const corsOption = {
   origin: true,
+  methods: "GET,PUT,POST,DELETE",
   credentials: true,
 };
 const mongoose = require("mongoose");
