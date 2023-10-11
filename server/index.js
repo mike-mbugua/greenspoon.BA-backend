@@ -4,7 +4,9 @@ const app = express();
 const jwt = require("jsonwebtoken");
 
 const mongoose = require("mongoose");
+
 const db = require("../public/config/keys").MONGO_URI;
+app.use(express.json());
 
 const dotenv = require("dotenv").config();
 const port = process.env.PORT || 8000;
@@ -16,6 +18,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/", require("../public/routes/user"));
+app.use("/api/v1/events", require("../public/routes/eventRoute"));
 
 app.listen(port, () => {
   console.log(`Server running on port: ${port} ....`);
